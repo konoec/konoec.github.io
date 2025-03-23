@@ -1,7 +1,7 @@
 /* =====================================================
    Resume section tabs and tab contents
 ===================================================== */
-const resumeTabs = document.querySelector('.resume-tabs');
+/*const resumeTabs = document.querySelector('.resume-tabs');
 const resumePortfolioTabBtns = resumeTabs.querySelectorAll('.tab-btn');
 const resumeTabContents = document.querySelectorAll('.resume-tab-content');
 
@@ -28,11 +28,42 @@ resumePortfolioTabBtns.forEach((resumePortfolioTabBtn, i) => {
     resumePortfolioTabBtn.addEventListener("click",() => {
         resumeTabNav(i);
     });
-});
+});*/
 
 /* =====================================================
-   Service modal open/close function
+   Strength modal open/close function
 ===================================================== */
+const strengthCardWithModals = document.querySelectorAll(".strength-container .card-with-modal");
+
+strengthCardWithModals.forEach((strengthCardWithModal) =>{
+    const strengthCard = strengthCardWithModal.querySelector(".strength-card");
+    const strengthBackDrop = strengthCardWithModal.querySelector(".strength-modal-backdrop");
+    const modalCloseBtn = strengthCardWithModal.querySelector(".modal-close-btn");
+    const strengthModal = strengthCardWithModal.querySelector(".strength-modal");
+
+    strengthCard.addEventListener("click", () => {
+        strengthBackDrop.style.display = "flex";
+
+        setTimeout(() => {
+            strengthBackDrop.classList.add("active");
+        }, 100);
+
+        setTimeout(() => {
+            strengthModal.classList.add("active");
+        }, 300);
+    });
+
+    modalCloseBtn.addEventListener("click", () => {
+        setTimeout(() => {
+            strengthBackDrop.style.display = "none";
+        },500);
+
+        setTimeout(() => {
+            strengthBackDrop.classList.remove("active");
+            strengthModal.classList.remove("active");
+        },100);
+    });
+});
 
 /* =====================================================
    Portfolio modals, tabs and cards
