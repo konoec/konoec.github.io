@@ -107,6 +107,15 @@ a{
 /* =========================================
    Base Styles
 ========================================= */
+html{
+   scroll-behavior: smooth;
+}
+
+body{
+   color: var(--color-04);
+   background: var(--body-color);
+   transition: .3s;
+}
 
 /* =========================================
    Reusable Styles
