@@ -17,69 +17,69 @@
    /* Red - hsl(356, 67%, 70%); */
    /* Pink - hsl(330, 73%, 72%); */
 
-   --hue: ;
-   --sat: ;
-   --light: ;
+   --hue: 162;
+   --sat: 60%;
+   --light: 65%;
 
-   --primary-color: ; /* primary */
-   --white-color: ; /* white */
-   --dark-color: ; /* dark */
+   --primary-color: hsl(var(--hue) var(--sat) var(--light)); /* primary */
+   --white-color: hsl(var(--hue) 45% 98%); /* white */
+   --dark-color: hsl(var(--hue) 26% 12%); /* dark */
 
    /* ======= Changeable colors for dark/light themes ======= */
-   --color-01: ; /* primary to dark */
-   --color-02: ; /* white to dark */
-   --color-03: ; /* dark to white */
-   --color-04: ; /* light-graygray to dark-gray */
-   --color-05: ; /* dark to primary */
+   --color-01: hsl(var(--hue) var(--sat) var(--light)); /* primary to dark */
+   --color-02: hsl(var(--hue) 45% 98%); /* white to dark */
+   --color-03: hsl(var(--hue) 26% 12%); /* dark to white */
+   --color-04: hsl(var(--hue) 0% 62%); /* light-graygray to dark-gray */
+   --color-05: hsl(var(--hue) 26% 12%); /* dark to primary */
 
-   --body-color: ; /* dark to white */
-   --hover-color: ;
+   --body-color: hsl(250 26% 12%); /* dark to white */
+   --hover-color: hsl(var(--hue) var(--sat) calc(var(--light) - 7%));
 
    /* ======= Background colors ======= */
-   --bottom-nav-bg: ;
-   --card-bg: ;
-   --modal-backdrop-bg: ;
-   --footer-bg: ;
+   --bottom-nav-bg: hsl(var(--hue) 32% 25% / .65);
+   --card-bg: linear-gradient(120deg, hsl(var(--hue) 54% 74% / .15), hsl(var(--hue) 54% 74% / .05));
+   --modal-backdrop-bg: hsl(var(--hue) 54% 74% / .1);
+   --footer-bg: linear-gradient(360deg, hsl(var(--hue) 54% 74% / .15), hsl(var(--hue) 54% 74% / .1));
 
-   --scrollbar-color: ;
-   --scrollbar-thumb: ;
-   --scrollbar-thumb-hover: ;
+   --scrollbar-color: hsl(var(--hue) 25% 20%);
+   --scrollbar-thumb: hsl(var(--hue) var(--sat) var(--light));
+   --scrollbar-thumb-hover: hsl(var(--hue) var(--sat) calc(var(--light) - 7%));
 
    /* ======= Font and typography ======= */
-   --body-font-family: ;
+   --body-font-family: "Inter", sans-serif;
    
    /* ======= Font sizes ======= */
-   --h1-font-size: ;
-   --h2-font-size: ;  
-   --h3-font-size: ;
-   --h4-font-size: ;
-   --h5-font-size: ;
+   --h1-font-size: 2.85rem;
+   --h2-font-size: 2.25rem;
+   --h3-font-size: 1.97rem;
+   --h4-font-size: 1.43rem;
+   --h5-font-size: 1.13rem;
 
-   --xlarge-font-size: ;
-   --large-font-size: ;
-   --medium-font-size: ;
-   --base-font-size: ;
-   --small-font-size: ;
-   --tiny-font-size: ;
-   
+   --xlarge-font-size: 1.48rem;
+   --large-font-size: 1.23rem;
+   --medium-font-size: 1.18rem;
+   --base-font-size: 1.1rem;
+   --small-font-size: 1.07rem;
+   --tiny-font-size: .98rem;
+
    /* ======= Font weights ======= */
-   --font-light: ;
-   --font-regular: ;
-   --font-medium: ;
-   --font-semi-bold: ;
-   --font-bold: ;
+   --font-light: 300;
+   --font-regular: 400;
+   --font-medium: 500;
+   --font-semi-bold: 600;
+   --font-bold: 700;
 
    /* ======= Layering order(z-index) ======= */
-   --z-minus: ;
-   --z-base: ;
-   --z-low: ;
-   --z-high: ;
-   --z-content: ;
-   --z-tooltip: ;
-   --z-fixed: ;
-   --z-overlay: ;
-   --z-modal: ;
-   --z-max: ;
+   --z-minus: -1;
+   --z-base: 0;
+   --z-low: 1;
+   --z-high: 10;
+   --z-content: 100;
+   --z-tooltip: 1000;
+   --z-fixed: 1100;
+   --z-overlay: 1110;
+   --z-modal: 1990;
+   --z-max: 9999;
 }
 
 /* ======= Light theme ======= */
