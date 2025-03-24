@@ -70,8 +70,71 @@ strengthCardWithModals.forEach((strengthCardWithModal) =>{
 ===================================================== */
 
 // Filter portfolio cards according to portfolio tabs.
+document.addEventListener("DOMContentLoaded", () => {
+   const portfolioTabs = document.querySelector(".portfolio-tabs");
+   const portfolioTabBtns = portfolioTabs.querySelectorAll(".tab-btn");
+   const cardsWithModals = document.querySelectorAll(".portfolio-container .card-with-modal");
+
+   portfolioTabBtns.forEach((tabBtn) => {
+        tabBtn.addEventListener("click", () => {
+            const filter = tabBtn.getAttribute("data-filter");
+
+            cardsWithModals.forEach((cardWithModal) => {
+               if (filter === "all" || cardWithModal.classList.contains(filter)) {
+                   cardWithModal.classList.remove("hidden");
+
+                   setTimeout(() => {
+                       cardWithModal.style.transition = ".5s ease";
+                       cardWithModal.style.opacity = "1";
+                   },1);
+               }else {
+                   cardWithModal.classList.add("hidden");
+
+                   setTimeout(() => {
+                       cardWithModal.style.transition = ".5s ease";
+                       cardWithModal.style.opacity = "0";
+                   },1);
+               }
+            });
+            // Add active class to the clicked tab button.
+            portfolioTabBtns.forEach((tabBtn) => tabBtn.classList.remove("active"));
+            tabBtn.classList.add("active");
+        });
+   })
+});
 
 // Open/Close Portfolio modals.
+const portfolioCardsWithModals = document.querySelectorAll(".portfolio-container .card-with-modal");
+
+portfolioCardsWithModals.forEach((portfolioCardWithModal) => {
+    const portfolioCard = portfolioCardWithModal.querySelector(".portfolio-card");
+    const portfolioBackDrop = portfolioCardWithModal.querySelector(".portfolio-modal-backdrop");
+    const portfolioModal = portfolioCardWithModal.querySelector(".portfolio-modal");
+    const modalCloseBtn = portfolioCardWithModal.querySelector(".modal-close-btn");
+
+    portfolioCard.addEventListener("click", () => {
+        portfolioBackDrop.style.display = "flex";
+
+        setTimeout(() => {
+            portfolioBackDrop.classList.add("active");
+        },300);
+
+        setTimeout(() => {
+            portfolioModal.classList.add("active");
+        },300);
+    });
+
+    modalCloseBtn.addEventListener("click", () => {
+        setTimeout(() => {
+            portfolioBackDrop.style.display = "none";
+        },500);
+
+        setTimeout(() => {
+            portfolioBackDrop.classList.remove("active");
+            portfolioModal.classList.remove("active");
+        },100);
+    });
+});
 
 /* =====================================================
    Testimonial Swiper
