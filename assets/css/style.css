@@ -1298,6 +1298,81 @@ body{
 /* =========================================
    Testimonials
 ========================================= */
+.testimonials{
+    position: relative;
+    width: 100%;
+    margin-top: 12em;
+}
+
+.swiper{
+    width: 100%;
+    max-width: 1050px;
+    height: 275px;
+}
+
+.swiper-slide{
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 45px;
+}
+
+.swiper-slide .testimonial-img{
+    width: 185px;
+}
+
+.swiper-slide .testimonial-img img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.swiper-slide .testimonial-details{
+    max-width: 500px;
+    text-align: left;
+}
+
+.swiper-slide .testimonial-details h3{
+    color: var(--color-02);
+    font-size: var(--xlarge-font-size);
+    font-weight: var(--font-semi-bold);
+    margin-bottom: 5px;
+}
+
+.swiper-slide .testimonial-details span{
+    font-size: var(--small-font-size);
+    font-weight: var(--font-regular);
+}
+
+.swiper-slide .testimonial-details p{
+    color: var(--color-02);
+    font-size: var(--base-font-size);
+    font-weight: var(--font-regular);
+    margin-top: 15px;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after{
+    display: none;
+}
+
+.swiper-button-next i,
+.swiper-button-prev i{
+    color: var(--primary-color);
+    font-size: 4.5rem;
+    transition: .3s ease;
+}
+
+.swiper-button-next:hover i,
+.swiper-button-prev:hover i{
+    color: var(--hover-color);
+}
+
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active{
+    background: var(--primary-color);
+}
 
 /* =========================================
    Contact Me
