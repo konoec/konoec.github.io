@@ -187,6 +187,11 @@ konoecContactForm.addEventListener('submit', function(event) {
 /* =====================================================
    Shrink the height of the header on scroll
 ===================================================== */
+window.addEventListener("scroll", () => {
+    const konoecHeader = document.querySelector(".konoec-header");
+
+    konoecHeader.classList.toggle("shrink", window.scrollY > 0);
+});
 
 /* =====================================================
    Bottom navigation menu

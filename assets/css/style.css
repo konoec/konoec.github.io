@@ -175,6 +175,19 @@ body{
 ========================================= */
 
 /* ========== Page scroll bar ========== */
+::-webkit-scrollbar{
+   width: 10px;
+   background: var(--scrollbar-color);
+}
+
+::-webkit-scrollbar-thumb{
+   background: var(--scrollbar-thumb);
+   border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+   background: var(--scrollbar-thumb-hover);
+}
 
 /* ========== Customized cursor ========== */
 
@@ -221,6 +234,11 @@ body{
    left: 0;
    padding: 30px 0;
    transition: .3s ease;
+}
+
+.konoec-header.shrink{
+   background: var(--body-color);
+   padding: 12px 0;
 }
 
 .konoec-header .inner{
