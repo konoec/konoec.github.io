@@ -156,6 +156,33 @@ var swiper = new Swiper(".konoec-testimonials-swiper", {
 /* =====================================================
    Send/Receive emails from contact form - EmailJS
 ===================================================== */
+(function() {
+    // https://dashboard.emailjs.com/admin/account
+    emailjs.init({
+        publicKey: "SGh8WW6kR6WVCSyZR",
+    });
+})();
+
+konoecContactForm = document.getElementById("konoec-contact-form");
+konoecContactFormAlert = document.querySelector(".contact-form-alert");
+
+konoecContactForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    // these IDs from the previous steps
+    emailjs.sendForm('service_gqwgehs', 'template_ysf24br', '#konoec-contact-form')
+        .then(() => {
+            //console.log('SUCCESS!');
+            konoecContactFormAlert.innerHTML = '<span>Your message sent successfully!</span> <i class="ri-checkbox-circle-fill"></i>';
+            konoecContactForm.reset();
+            setTimeout(() => {
+                konoecContactFormAlert.innerHTML = "";
+            }, 5000)
+        }, (error) => {
+            konoecContactFormAlert.innerHTML = '<span>Message not sent</span> <i class="ri-error-warning-fill"></i>';
+            konoecContactFormAlert.title = error;
+            //console.log('FAILED...', error);
+        });
+});
 
 /* =====================================================
    Shrink the height of the header on scroll
