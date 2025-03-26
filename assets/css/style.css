@@ -1561,6 +1561,54 @@ body{
 /* =========================================
    Footer
 ========================================= */
+.konoec-footer{
+   background: var(--footer-bg);
+   padding-top: 100px;
+   padding-bottom: 165px;
+}
+
+.konoec-footer .konoec-container .inner{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   row-gap: 40px;
+}
+
+.footer-menu{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   column-gap: 22px;
+   row-gap: 22px;
+}
+
+.footer-menu .menu-item a{
+   color: var(--color-01);
+   font-size: calc(var(--tiny-font-size) - .07rem);
+   font-weight: var(--font-medium);
+   text-transform: uppercase;
+   padding: 3px 12px;
+   border-radius: 15px;
+   transition: .3s;
+}
+
+.footer-menu .menu-item a:hover{
+   color: var(--color-03);
+   background: var(--color-01);
+}
+
+.konoec-footer .copy-right{
+   color: var(--color-04);
+   font-size: var(--small-font-size);
+   margin-top: 10px;
+}
+
+.konoec-footer .copy-right a:hover{
+   color: var(--color-01);
+   transition: .3s;
+}
 
 /* =========================================
    Media Queries (max-width: 1600px)

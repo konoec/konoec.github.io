@@ -1,7 +1,7 @@
 /* =====================================================
    Resume section tabs and tab contents
 ===================================================== */
-/*const resumeTabs = document.querySelector('.resume-tabs');
+const resumeTabs = document.querySelector('.resume-tabs');
 const resumePortfolioTabBtns = resumeTabs.querySelectorAll('.tab-btn');
 const resumeTabContents = document.querySelectorAll('.resume-tab-content');
 
@@ -28,7 +28,7 @@ resumePortfolioTabBtns.forEach((resumePortfolioTabBtn, i) => {
     resumePortfolioTabBtn.addEventListener("click",() => {
         resumeTabNav(i);
     });
-});*/
+});
 
 /* =====================================================
    Strength modal open/close function
