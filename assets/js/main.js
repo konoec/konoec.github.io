@@ -229,7 +229,7 @@ const menuShowBtn = document.querySelector(".menu-show-btn");
 var navTimeout;
 
 window.addEventListener("scroll", () => {
-    bottomNav.classList.toggle("active");
+    bottomNav.classList.add("active");
     menuShowBtn.classList.remove("active");
 
     if (window.scrollY < 10) {
@@ -239,6 +239,7 @@ window.addEventListener("scroll", () => {
             bottomNav.classList.add("active");
         }
 
+        clearTimeout(navTimeout);
         navTimeout = setTimeout(scrollStopped, 2500);
     }
 
@@ -250,6 +251,7 @@ window.addEventListener("scroll", () => {
             menuShowBtn.classList.add("active")
         }
 
+        clearTimeout(navTimeout);
         navTimeout = setTimeout(scrollStopped, 2500);
     }
 });
