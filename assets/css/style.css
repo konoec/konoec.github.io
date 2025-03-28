@@ -190,6 +190,42 @@ body{
 }
 
 /* ========== Customized cursor ========== */
+.cursor{
+   z-index: var(--z-max);
+   position: fixed;
+   pointer-events: none;
+}
+
+.cursor-dot{
+   position: absolute;
+   background: var(--primary-color);
+   width: 5px;
+   height: 5px;
+   transform: translate(-50%, -50%);
+   border-radius: 50%;
+   transition-property: top, left, width, height;
+   transition-duration: .03s, .03s, .3s, .3s;
+}
+
+.cursor-dot.large{
+   background: hsl(var(--hue) var(--sat) var(--light) / .35);
+   width: 75px;
+   height: 75px;
+   transition-property: top, left, width, height;
+   transition-duration: .03s, .03s, .3s, .3s;
+}
+
+.cursor-circle{
+   position: absolute;
+   border: 2px solid var(--primary-color);
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   opacity: .5;
+   transform: translate(-50%, -50%);
+   transition-property: top, left;
+   transition-duration: .09s, .09s;
+}
 
 /* ========== To top button with scroll indicator bar ========== */
 .to-top-btn{
