@@ -83,6 +83,59 @@
 }
 
 /* ======= Light theme ======= */
+.light-theme{
+   /* ======= Changeable colors for dark/light themes ======= */
+   --color-01: hsl(var(--hue) 26% 12%); /* primary to dark */
+   --color-02: hsl(var(--hue) 26% 12%); /* white to dark */
+   --color-03: hsl(var(--hue) 45% 98%); /* dark to white */
+   --color-04: hsl(var(--hue) 9% 46%); /* light-graygray to dark-gray */
+   --color-05: hsl(var(--hue) var(--sat) var(--light)); /* dark to primary */
+
+   --body-color: hsl(var(--hue) 45% 98%); /* dark to white */
+
+   /* ======= Background colors ======= */
+   --bottom-nav-bg: hsl(var(--hue) 32% 85% / .8);
+   --card-bg: hsl(0 0% 100%);
+   --modal-backdrop-bg: hsl(var(--hue) 50% 12% / .5);
+   --footer-bg: linear-gradient(360deg, hsl(var(--hue) var(--sat) var(--light)), hsl(var(--hue) var(--sat) var(--light) / .75));
+
+   --scrollbar-color: hsl(var(--hue) 9% 60%);
+   --scrollbar-thumb: hsl(var(--hue) 9% 25%);
+   --scrollbar-thumb-hover: hsl(var(--hue) 9% 17%);
+
+   .bottom-nav .menu-hide-btn{
+      box-shadow: 0 2px 4px hsl(0 0% 1% / .25);
+   }
+
+   .pro-card,
+   .skill-card,
+   .strength-card,
+   .portfolio-card,
+   .contact-form-body{
+      box-shadow: 0 2px 4px hsl(0 0% 1% / .05);
+   }
+
+   .contact-icon,
+   .contact-social-links li{
+      box-shadow: 0 2px 4px hsl(0 0% 1% / .1);
+   }
+
+   .konoec-footer .copy-right{
+      color: hsl(var(--hue) 26% 30%);
+   }
+
+    .konoec-footer .copy-right a{
+        color: hsl(var(--hue) 26% 30%);
+    }
+
+    .konoec-footer .copy-right a:hover {
+       color: hsl(var(--hue) 0% 0%);
+    }
+
+   .to-top-btn{
+      background: hsl(var(--hue) 26% 12% / .2);
+   }
+}
 
 /* =========================================
    Reset / Normalize
@@ -381,8 +434,20 @@ body{
    transform: rotate(-15deg);
 }
 
-.theme-btn .moon-icon{
+/*.theme-btn .moon-icon{
    display: none;
+}*/
+
+.theme-btn.active-sun-icon .moon-icon,
+.theme-btn .sun-icon{
+   opacity: 1;
+   transition: .3s;
+}
+
+.theme-btn.active-sun-icon .sun-icon,
+.theme-btn .moon-icon{
+   opacity: 0;
+   transition: .3s;
 }
 
 /* =========================================

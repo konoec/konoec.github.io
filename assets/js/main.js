@@ -328,8 +328,29 @@ cursorHoverLinks.forEach((cursorHoverLink) => {
 ===================================================== */
 
 // Change theme and save current theme on click the theme button.
+const themeBtn = document.querySelector(".theme-btn");
+
+themeBtn.addEventListener("click", () => {
+    // Change theme icon and theme on click the theme button.
+    themeBtn.classList.toggle("active-sun-icon");
+    document.body.classList.toggle("light-theme");
+
+    // Save theme icon and theme on click theme button.
+    const getCurrentIcon = () => themeBtn.classList.contains("active-sun-icon") ? "sun" : "moon";
+    const getCurrentTheme = () => document.body.classList.contains("light-theme") ? "light" : "dark";
+
+    localStorage.setItem("konoec-saved-icon", getCurrentIcon());
+    localStorage.setItem("konoec-saved-theme", getCurrentTheme());
+});
 
 // Get saved theme icon and theme on document loaded.
+const savedIcon = localStorage.getItem("konoec-saved-icon");
+const savedTheme = localStorage.getItem("konoec-saved-theme");
+
+document.addEventListener("DOMContentLoaded", () => {
+   themeBtn.classList[savedIcon === "sun" ? "add" : "remove"]("active-sun-icon");
+   document.body.classList[savedTheme === "light" ? "add" : "remove"]("light-theme");
+});
 
 /* =====================================================
    ScrollReveal JS animations
